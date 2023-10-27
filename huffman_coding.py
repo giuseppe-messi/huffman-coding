@@ -18,20 +18,20 @@ BinHeap Class: To maintain a priority queue of nodes, the program employs a BinH
 which utilizes a binary heap data structure. This data structure ensures that nodes with 
 lower frequencies are placed at the top of the heap, enabling efficient tree construction.
 
-build_huffman_tree function: This key function takes a text as input and returns a Huffman 
-tree data structure. It accomplishes this by first constructing a frequency hashtable, 
+build_huffman_tree Function: This key function takes a text as input and returns a Huffman 
+tree data structure. It accomplishes this by constructing a frequency hashtable, 
 tallying the occurrence of each character in the given text. Then, it individually inserts 
 unique characters into the binary heap, treating each character as a node with a frequency 
 value. This foundational step forms the basis for building the Huffman tree. Nodes with lower 
 frequencies take precedence in the tree's hierarchy, allowing for efficient encoding and 
 decoding of the input text.
 
-encode function: The encode function uses the generated Huffman tree to encode input text. 
+encode Function: The encode function uses the generated Huffman tree to encode input text. 
 It traverses the tree to find the binary code for each character in the text. The result 
 is a binary representation of the input text, which is more efficient for transmission 
 and storage.
 
-decode function: In tandem with the Huffman tree, the decode function reverses the encoding 
+decode Function: In tandem with the Huffman tree, the decode function reverses the encoding 
 process. It traverses the tree according to the encoded bits, reconstructing the original 
 text from the binary code.
 
@@ -48,6 +48,16 @@ the encoded text are identical, the decode function offers an efficient mechanis
 traversing the tree, it swiftly returns the repeated character followed by its frequency of 
 occurrence. This optimized approach ensures exceptional efficiency, even when handling uniform 
 characters in the input text.
+
+Time Complexity:
+- build_huffman_tree: O(n * log(n))
+- encode: O(n * log(n))
+- decode: O(n * log(n))
+
+Space Complexity:
+- build_huffman_tree: O(n)
+- encode: O(n)
+- decode: O(1)
 
 """
 
